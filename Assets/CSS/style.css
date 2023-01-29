@@ -1,0 +1,769 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --fontPoppins: "Poppins", sans-serif;
+  --fontOpenSans: "Open Sans", sans-serif;
+  --white__color: #fff;
+  --black__color: #000;
+  --mainTitle__color: #282828;
+  --subtitle__color: #999;
+  --mainText__color: #666;
+  --secondMain__color: #f25454;
+  --footer__color: #b0b0b0;
+  --footer__bgColor: #222;
+  --section__bgColor: #f8f9fa;
+  --setting__bgcolor: #444;
+
+  /* --subtitle__color: #e65f78; */
+  --button__color: #d8576f;
+
+  --formBorder__color: #e0e0e0;
+  --placeholder__color: #b1b4b8;
+}
+
+body {
+  font-family: var(--fontPoppins), var(--fontOpenSans);
+  /* background-color: #000; */
+}
+
+/*************************************fixed buttons Section*****************************************/
+.settings__button {
+  position: fixed;
+  top: 18%;
+  left: 0;
+  z-index: 11;
+  border: 1px solid var(--mainTitle__color);
+  border-radius: 0;
+}
+
+/*************************************Navbar Section*****************************************/
+nav {
+  background-color: var(--white__color);
+  box-shadow: 0 1px 8px 3px rgba(0, 0, 0, 0.2);
+  font-family: var(--fontPoppins);
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--mainTitle__color);
+  font-size: 0.8125rem;
+  transition: color 0.2s ease-in;
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--secondMain__color);
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  border: unset;
+  box-shadow: none;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/********************************************************************************************/
+/*************************************Home Section*****************************************/
+#home .container-fluid {
+  padding-inline: 0;
+}
+
+.slide__img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  all: unset;
+  position: absolute;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /*To make the hover BG effect*/
+  background-image: linear-gradient(var(--white__color),var(--white__color));
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  border-radius:0 0.25rem 0.25rem 0 ;
+  transition: all 400ms ease-in;
+  
+}
+
+.carousel-control-next {
+  top: calc(45vh - 5px);
+  /* border: 1px solid red; */
+  border: 1px solid var(--white__color);
+  border-left: 0;
+}
+
+.carousel-control-prev {
+  top: calc(35vh - 5px);
+  /* border: 1px solid green; */
+  border: 1px solid var(--white__color);
+  border-left: 0;
+}
+
+.carousel-control-next:hover ,
+.carousel-control-prev:hover{
+color:var(--secondMain__color);
+background-size: 100% 100%;
+opacity: 1;
+}
+
+.carousel-caption{
+  top:40%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  all:unset;
+}
+
+.home__title{
+  font-family: var(--fontPoppins);
+  font-weight: 700;
+  font-size: calc(37px + 2vw );
+  max-width: 500px;
+}
+
+.animate__animated.animate__bounceInRight {
+  --animate-duration: 1.4s;
+}
+
+.home__arrow--click {
+  bottom: 5%;
+  margin: 0;
+  left: calc(50% - 0px);
+  transform: translate(-50%, 0);
+  border: 2px solid var(--white__color);
+  width: 30px;
+  height: 50px;
+  border-radius: 50rem;
+}
+
+.animate__animated.animate__bounce {
+  --animate-duration: 3s;
+}
+
+/********************************************************************************************/
+/*************************************About Section*****************************************/
+
+#about .subtitle__container h2,
+#team .subtitle__container h2,
+#services .subtitle__container h2,
+#testimonials .subtitle__container h2,
+#contact .subtitle__container h2 {
+  font-family: var(--fontPoppins);
+  font-weight: 700;
+  font-size: 2.375rem;
+  position: relative;
+  z-index: 1;
+}
+
+#about .subtitle__container h2::before,
+#team .subtitle__container h2::before,
+#services .subtitle__container h2::before,
+#testimonials .subtitle__container h2::before,
+#contact .subtitle__container h2::before {
+  z-index: -1;
+  position: absolute;
+  bottom: -66%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 80px;
+  opacity: 0.15;
+  font-family: var(--fontPoppins);
+  font-weight: 800;
+  margin-block: 1.25rem;
+  color: var(--subtitle__color);
+}
+
+#about .subtitle__container h2::before {
+  content: "A";
+}
+
+.subtitle__line {
+  width: 30px;
+  height: 1px;
+  background-color: var(--mainTitle__color);
+  transition: width 400ms linear;
+}
+
+.subtitle__container:hover .subtitle__line {
+  width: 3.75rem;
+}
+
+.subtitle__text {
+  font-family: var(--fontOpenSans);
+  line-height: 1.5rem;
+  color: var(--subtitle__color);
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.about__parrafo {
+  font-family: var(--fontOpenSans);
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: var(--mainText__color);
+}
+.progress__data {
+  font-family: var(--fontOpenSans);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--setting__bgcolor);
+  line-height: 1.5625rem;
+}
+
+.progress {
+  height: 0.3125rem;
+}
+
+.progress-bar {
+  background-color: var(--secondMain__color);
+}
+
+/********************************************************************************************/
+/*************************************Team Section*****************************************/
+
+#team .subtitle__container h2::before {
+  content: "O";
+}
+
+.profile__img{
+  border-radius: .25rem;
+  transition: all 400ms ease-in;
+  /* transform:translate(5%, 5%); 
+  width:100%;  */
+}
+
+.img__container{
+  border-radius: .25rem;
+  /* transform:translate(5%, 5%); */
+  /* overflow: hidden;    */
+}
+
+.profileImage__layer{
+  /*must be written here (^_^)*/
+  position: absolute;
+  left: 0%;
+  top:100%;
+  width: 100%;
+  height: 100%; 
+  border-radius: inherit;
+  background-color: rgba(255, 0, 0, 0.5); 
+  transition: top 500ms linear;
+}
+
+.team__conatiner .card{
+  border: unset;
+}
+
+ .team__conatiner .card:hover .profileImage__layer{
+  top: 0%;
+}
+
+.team__conatiner .card:hover .profile__img{
+  transform: scale(1.3);
+}
+
+.team__conatiner .card:hover .card-title{
+  color: var(--secondMain__color);
+}
+
+a.social__icon{
+  color:var(--white__color);
+  transition: all 500ms ease;
+}
+
+a.social__icon:hover{
+  color: var(--setting__bgcolor);
+}
+
+.team__conatiner .card .card-title , .testimonial__container .card-title{
+font-family: var(--fontPoppins);
+font-weight: 600;
+font-size: 1rem;
+color: var(--mainTitle__color);
+transition: color 400ms linear;
+} 
+
+.team__conatiner .card .card-text, .testimonial__container .card-text{
+color: var(--mainText__color);
+font: var(--fontOpenSans);
+font-size: .875rem;
+font-weight: 400;
+} 
+
+.hireMe__container{
+  max-width: 1000px;
+  margin-block:3.125rem;
+}
+
+.hireMe__container h2{
+  font-family: var(--fontPoppins);
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.team__button a{
+  transition: color 300ms ease-in;
+  font-family: inherit;
+  color: var(--white__color);
+  text-decoration: none;
+}
+
+.team__button:hover a {
+  color: rgba(255, 255, 255, 0.712);
+}
+
+/********************************************************************************************/
+/*************************************Services Section*****************************************/
+
+#services .subtitle__container h2::before {
+  content: "S";
+}
+
+.services__container .card .contact__title {
+  margin-bottom: 10px;
+  font-size: 1.125rem;
+  font-family: var(--fontPoppins);
+  font-weight: 600;
+  transition: color 300ms ease-in;
+}
+
+.services__container .card {
+  border: unset;
+  background-color: transparent;
+}
+
+.services__container .card:hover .contact__title {
+  color: var(--secondMain__color);
+}
+
+/********************************************************************************************/
+/*************************************Testimonials Section*****************************************/
+
+#testimonials .subtitle__container h2::before {
+  content: "C";
+}
+
+/************/
+.test__wrapper{
+  padding: 70px 0;
+}
+
+.slide__JSImage img {
+  border-radius: 50%;
+}
+
+.slide__JSImage img{
+border:none;
+}
+
+/* Default slide */
+.center-slider .slick-slide{
+  /* background-color: #b32532; */
+  color: #FFF;
+  /* height: 230px; */
+  margin: 0 15px 0 0;
+  /*display: flex;
+   align-items: center;
+  justify-content: center; */
+  transform: scale(0.8);
+  opacity : 0.5 ;
+  transition: all 0.4s ease-in-out;
+}
+
+.center-slider .slick-slide,
+.center-slider .slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"] {
+  transform: scale(0.8, 0.8);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Active center slide (You can change anything here for cenetr slide)*/
+.center-slider .slick-center,
+.center-slider .slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] {
+  transform: scale(1);
+  /* background-color: #000000; */
+  cursor: pointer;
+}
+.center-slider .slick-current.slick-active{
+  transform: scale(1);
+  /* background-color: #000000; */
+  opacity : 1 ;
+  cursor: pointer;
+}
+
+.slick-next, .slick-prev{
+  z-index: 5;
+}
+.slick-next{
+  right: 15px;
+}
+.slick-prev{
+  left: 15px;
+} 
+.slick-next:before, .slick-prev:before{
+  color: #000;
+
+  font-size: 26px;
+}
+
+.test__wrapper .card-body{
+  display: none;
+}
+
+.test__wrapper .slick-current.slick-active .card-body{
+  display: block;
+}
+
+/******/
+
+.review__desc{
+  font-size: 25px;
+  line-height: 1.5em;
+  font-family: var(--fontOpenSans);
+  font-weight: 400;
+  margin-bottom: 10px;
+  color:var(--mainText__color);
+}
+
+
+
+/********************************************************************************************/
+/*************************************Contact Section*****************************************/
+#contact,
+#services {
+  background-color: #fafafa;
+  padding-block: 6.25rem;
+}
+#contact .subtitle__container h2::before {
+  content: "G";
+}
+
+.contact__text {
+  font-family: var(--fontPoppins);
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--mainTitle__color);
+}
+
+.contact__icon {
+  color: var(--secondMain__color);
+  width: 15%;
+  text-align: center;
+}
+
+.contact__data {
+  font-family: var(--fontPoppins);
+}
+
+.contact__data h4 {
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: color 300ms ease-in;
+}
+
+.contact__data p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--mainText__color);
+  font-family: var(--fontOpenSans);
+}
+
+#contact .card {
+  border: unset;
+  background-color: transparent;
+}
+
+#contact .contact__address .row > .address__column:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.contact__data a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 300ms ease-in;
+}
+
+#contact .card:hover .contact__data h4,
+.contact__data a:hover,
+.footer__address a:hover {
+  color: var(--secondMain__color);
+}
+
+.form__input {
+  padding-inline: 0.75rem;
+  padding-block: 0.375rem;
+  width: calc(100%);
+  border: 2px solid #eee;
+  transition: border-color 0.15s linear, box-shadow 0.15s linear;
+}
+
+.form__input:focus {
+  outline: 1px solid var(--secondMain__color); /*!important; */
+  border: 1px solid var(--secondMain__color);
+  box-shadow: 0 0 2px #f25454;
+}
+
+::placeholder {
+  color: #a6a6a6;
+  font-weight: 400;
+  font-size: 0.875rem;
+  font-family: var(--fontOpenSans);
+}
+
+.form__button , .team__button {
+  display: block;
+  width: fit-content;
+  text-transform: capitalize;
+  color: #fff;
+  border: none;
+  padding: 0.68rem 1rem;
+  font-size: 0.875rem;
+  background-color: var(--secondMain__color);
+  text-decoration: none;
+  transition: all 500ms ease;
+  cursor: pointer;
+  font-family: var(--fontOpenSans);
+  font-weight: 700;
+  border-radius: 0.25rem;
+}
+
+a.form__button:hover , .team__button:hover{
+  background-color: #f2545493;
+  color: rgba(255, 255, 255, 0.712);
+}
+
+/********************************************************************************************/
+/*************************************Footer Section*****************************************/
+#footer {
+  /* padding-block: 3.75rem; */
+  background-color: var(--footer__bgColor);
+  background-image: url("../Images/dotted-map.png");
+  background-size: contain;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white__color);
+}
+
+.footer__container {
+  min-height: 50vh;
+  margin-block: 50px;
+}
+.footer__wrapper {
+  height: 100%;
+  /* border:1px solid transparent; */
+}
+
+.lookUp__button {
+  position: absolute;
+  top: -50%;
+  left: calc(50% - 0px);
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--secondMain__color);
+  background-color: var(--secondMain__color);
+  border-radius: 50%;
+  padding: 10px;
+  opacity: 0.75;
+  margin: 0;
+  transition: opacity 400ms linear;
+}
+
+.lookUp__button:hover {
+  opacity: 1;
+}
+
+.footer__Ctitle,
+.footer__address {
+  font-family: var(--fontPoppins);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.footer__address a {
+  all: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+.contact__links li,
+.footer__address {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--footer__color);
+  transition: all 300ms ease-in;
+  line-height: 1.5625rem;
+}
+
+.link__list {
+  list-style-type: none;
+  margin: 0;
+}
+
+.contact__links ul a {
+  all: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.contact__links ul a:hover {
+  color: var(--secondMain__color);
+}
+
+ul.link__list.list__tags {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 90%;
+}
+
+ul.link__list.list__tags li {
+  border-radius: 0.25rem;
+}
+
+.contact__links ul a.tag__border {
+  border: 0.5px solid var(--footer__color);
+}
+
+.contact__links ul a.tag__border:hover {
+  border: 0.5px solid var(--secondMain__color);
+}
+
+/***************************************************************/
+#copy__rights {
+  padding-block: 1.875rem;
+  background-color: #1a1a1a;
+  font-family: var(--fontPoppins);
+  font-size: 0.875rem;
+  color: var(--footer__color);
+}
+#copy__rights p a {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--footer__color);
+  text-decoration: none;
+  transition: color 400ms linear;
+}
+
+#copy__rights p a:hover {
+  color: var(--secondMain__color);
+}
+
+.social__footerIcons ul a {
+  color: var(--white__color);
+  transition: color 400ms linear;
+}
+
+.social__footerIcons ul a:hover {
+  color: var(--secondMain__color);
+}
+
+/********************************************************************************************/
+
+/*******************************************RWD Section*****************************************/
+@media screen and (min-width: 991.9808px) {
+  .subtitle__text {
+    max-width: 800px;
+    /* border:1px solid red; */
+  }
+}
+@media screen and (min-width: 1199.9808px) {
+  .carousel-control-next {
+  top: calc(60vh - 5px);
+}
+
+.carousel-control-prev {
+  top: calc(50vh - 5px);
+}
+}
+
+
+@media screen and (max-width: 1399.9808px) {
+}
+
+@media screen and (max-width: 1199.9808px) {
+}
+
+@media screen and (max-width: 991.9808px) {
+  nav .container {
+    max-width: 100%;
+  }
+  .navbarSocial__icon {
+    display: none;
+  }
+  .nav-item {
+    line-height: 1.5rem;
+  }
+
+  .contact__container {
+    max-width: 100%;
+  }
+  .review__img{
+    height: 80vh;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 767.9808px) {
+  .home__arrow--click{
+    display: none;
+  }
+
+  .hireMe__container h2{
+    margin-bottom: 1.875rem;
+  }
+
+  .footer__container {
+    max-width: 100%;
+  }
+
+  ul.link__list.list__tags {
+    max-width: 100%;
+  }
+
+  .contact__text {
+    font-size: 1.5rem;
+    margin: auto;
+  }
+
+  .social__footerIcons ul {
+    width: 50%;
+    justify-content: space-between;
+    margin: 1rem auto;
+  }
+}
+
+@media screen and (max-width: 575.9808px) {
+  .contact__text {
+    max-width: 500px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 425.9808px) {
+}
+
+@media screen and (max-width: 344.9808px) {
+}
+
+/**************************************************************************************************/
