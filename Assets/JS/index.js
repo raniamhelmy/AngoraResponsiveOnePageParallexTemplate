@@ -8,33 +8,31 @@ $(document).ready(function(){
       speed: 300,
       centerPadding: '20px',
       infinite: true,
-      autoplaySpeed: 5000,
-      autoplay: true
+      // autoplaySpeed: 5000,
+      autoplay: false,
+      responsive: [
+        {
+          breakpoint: 800,
+           settings: {
+              
+              slidesToShow: 3,
+              slidesToScroll: 1
+           }
+        },
+        {
+          breakpoint: 500,
+           settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+           }
+        },
+      ]
     });
   });
 
 
-
-
-//   x=document.querySelector("slide__JSImage.slick-active");
-//   x[0].style.backgroundColor = "red";
- 
-// var sideBar = document.getElementsByClassName('slick-current');
-// console.log(sideBar.className)
-// if (sideBar.classList.contains('active')){
-//     console.log('active')
-// }
-// else (console.log('not active'))
-// var requiredElement = x[0];
-// console.log(x);
-
-// var g = document.getElementById("clientOne");
-// var btns = header.getElementsByClassName("btn");
-// console.log(g)
-
-
-var reviewArray=[
-    "Aenean sit amet est orci. Aenean at nisi eget nulla lobortis commodo. Nam eget lorem in ex aliquam dapibus." ,
+  var reviewArray=[
+    " Aenean sit amet est orci. Aenean at nisi eget nulla lobortis commodo. Nam eget lorem in ex aliquam dapibus. " ,
     " Suspendisse non velit lacus. Mauris efficitur lorem a justo semper, ut suscipit ligula malesuada. Donec dui nulla. ",
     " Vestibulum lectus massa, volutpat ut tristique nec, volutpat in turpis. In vehicula tempus odio. Nullam enim ligula. ",
     " Nunc accumsan finibus sollicitudin. Integer malesuada purus sapien, sit amet volutpat sem fringilla ut. Proin viverra scelerisque mollis. ",
@@ -46,20 +44,54 @@ var reviewArray=[
    ,
 ]
 
-// var printedText=reviewArray[0];
-// document.getElementById("demo").innerHTML='<i class="fas fa-quote-left"></i>'+ printedText + '<i class="fas fa-quote-right"></i>';
+// next and previous button click
+$('body').on('click', '.slick-next' , function () {
+  // alert('next working');
+  next()
+})
 
-// var printedText=''
-//   (function(){for(var i=0 ; i<reviewArray.length; i++ ) { 
-  
-//     setTimeout(function() { printedText=''; printedText=reviewArray[i]; document.getElementById("demo").innerHTML='<i class="fas fa-quote-left"></i>'+ printedText + '<i class="fas fa-quote-right"></i>'; console.log(printedText);  },300);
-//   ;
-  
-    
-//     // document.getElementById("demo").innerHTML='<i class="fas fa-quote-left"></i>'+ printedText + '<i class="fas fa-quote-right"></i>'; 
-//     console.log(printedText)
-//   }
-//   }()
+$('body').on('click', '.slick-prev', function () {
+  // alert('prev working')
+  prev()
+})
+
+
+var quote="";
+var count=0;
+function next(){
+  count++;
+  if(count >= reviewArray.length){
+      count = 0;
+      quote=reviewArray[count];
+      
+  }else{
+    quote=reviewArray[count];
+  }
+  printedText=quote;
+  // console.log(printedText)
+  document.getElementById("demo").innerHTML='<i class="fas fa-quote-left"></i>'+ printedText + '<i class="fas fa-quote-right"></i>';
+}
+
+function prev(){
+  count--;
+  if(count < 0){
+      count = reviewArray.length -1;
+      quote=reviewArray[count];
+  }else{
+      quote=reviewArray[count];
+  }
+  printedText=quote;
+  // console.log(printedText)
+  document.getElementById("demo").innerHTML='<i class="fas fa-quote-left"></i>'+ printedText + '<i class="fas fa-quote-right"></i>';
+}
+
+
+/* Deprecated For Behaviour Reasons*/
+function gotClicked(clicked_id){
+
+}
+
+/* Deprecated For Behaviour Reasons
 
 function gotClicked(clicked_id)
   {
@@ -78,3 +110,5 @@ function gotClicked(clicked_id)
       }
     document.getElementById("demo").innerHTML='<i class="fas fa-quote-left"></i>'+ printedText + '<i class="fas fa-quote-right"></i>';
   }
+
+  */

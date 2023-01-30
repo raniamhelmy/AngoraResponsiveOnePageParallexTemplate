@@ -363,7 +363,7 @@ font-weight: 400;
   content: "C";
 }
 
-/************/
+/**** Start Slick Slider Customized CSS ****/
 .test__wrapper{
   padding: 70px 0;
 }
@@ -382,11 +382,12 @@ border:none;
   color: #FFF;
   /* height: 230px; */
   margin: 0 15px 0 0;
-  /*display: flex;
+  /* display: flex;
    align-items: center;
   justify-content: center; */
   transform: scale(0.8);
   opacity : 0.5 ;
+  pointer-events: none;
   transition: all 0.4s ease-in-out;
 }
 
@@ -402,26 +403,28 @@ border:none;
   transform: scale(1);
   /* background-color: #000000; */
   cursor: pointer;
+  pointer-events:auto;
 }
+
 .center-slider .slick-current.slick-active{
   transform: scale(1);
   /* background-color: #000000; */
   opacity : 1 ;
   cursor: pointer;
+  pointer-events:auto;
 }
 
 .slick-next, .slick-prev{
   z-index: 5;
 }
 .slick-next{
-  right: 15px;
+  right: 20px;
 }
 .slick-prev{
-  left: 15px;
+  left: 20px;
 } 
 .slick-next:before, .slick-prev:before{
-  color: #000;
-
+  color: var(--secondMain__color);
   font-size: 26px;
 }
 
@@ -433,7 +436,7 @@ border:none;
   display: block;
 }
 
-/******/
+/**************************/
 
 .review__desc{
   font-size: 25px;
@@ -442,6 +445,7 @@ border:none;
   font-weight: 400;
   margin-bottom: 10px;
   color:var(--mainText__color);
+  max-width: 650px;
 }
 
 
